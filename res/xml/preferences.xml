@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<CheckBoxPreference android:title="@string/playSound" android:key="playSound" android:defaultValue="true"></CheckBoxPreference>
+<CheckBoxPreference android:key="vibrate" android:title="@string/vibrate" android:defaultValue="true"></CheckBoxPreference>
+<ListPreference android:title="@string/startTimerControl" android:entries="@array/startTimerControlArray" android:entryValues="@array/startTimerControlValueArray" android:defaultValue="both" android:key="startTimerControl"></ListPreference>
+</PreferenceScreen>

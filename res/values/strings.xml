@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rest Timer</string>
+    <string name="bothStartRest">Tap/Camera to Start Rest</string>
+    <string name="tapStartRest">Tap to Start Rest</string>
+    <string name="cameraStartRest">Camera to Start Rest</string>
+    <string name="restLeft">Time Remaining</string>
+    <string name="restLengthSeconds">Rest Length (seconds)</string>
+    
+    <string name="menu_settings">Settings</string>
+    
+    <string name="playSound">Play Sound</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="startTimerControl">Start Timer Control</string>
+    <string-array name="startTimerControlArray">
+    	<item>Tap Screen</item>
+    	<item>Camera Button</item>
+    	<item>Both</item>
+    </string-array>
+    <string-array name="startTimerControlValueArray">
+    	<item>tap</item>
+    	<item>camera</item>
+    	<item>both</item>
+    </string-array>
+</resources>
