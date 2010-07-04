@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pausen-Timer</string>
+    <string name="bothStartRest">Antippen/Kamera für Pause</string>
+    <string name="tapStartRest">Antippen für Pause</string>
+    <string name="cameraStartRest">Kamera für Pause</string>
+    <string name="restLeft">Verbleibende Zeit</string>
+    <string name="restLengthSeconds">Pausendauer (Sekunden)</string>
+    
+    <string name="menu_settings">Einstellungen</string>
+    
+    <string name="playSound">Benachrichtigungston</string>
+    <string name="vibrate">Vibration</string>
+    <string name="startTimerControl">Timer wie starten?</string>
+    <string-array name="startTimerControlArray">
+    	<item>Bildschirm antippen</item>
+    	<item>Kamerataste</item>
+    	<item>Beide</item>
+    </string-array>
+    <string-array name="startTimerControlValueArray">
+    	<item>tap</item>
+    	<item>camera</item>
+    	<item>both</item>
+    </string-array>
+    <string name="preventSleep">Standby-Modus deaktivieren</string>
+</resources>

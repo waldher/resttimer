@@ -22,4 +22,5 @@
     	<item>camera</item>
     	<item>both</item>
     </string-array>
+    <string name="preventSleep">Prevent Phone from Sleeping</string>
 </resources>

@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.PowerManager;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.view.KeyEvent;
@@ -53,6 +54,8 @@ public class RestTimer extends Activity {
     private ViewGroup countdownLayout;
 
 	private RestCountdown restCountdown;
+	
+	private PowerManager.WakeLock wakeLock;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,7 +109,35 @@ public class RestTimer extends Activity {
     protected void onResume() {
     	super.onResume();
     	
+    	if(settings.getBoolean("preventSleep", true)){
+    		preventSleep();
+    	} else {
+    		if(wakeLock != null && wakeLock.isHeld()){
+    			wakeLock.release();
+    		}
+    	}
+    	
     	updateTapToRestText();
+    }
+    
+    @Override
+    protected void onPause() {
+    	super.onPause();
+
+		if(wakeLock != null && wakeLock.isHeld()){
+			wakeLock.release();
+		}
+    }
+    
+    private void preventSleep(){
+		if(wakeLock == null){
+        	PowerManager powerManager = (PowerManager)getSystemService(POWER_SERVICE);
+			wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "RestTimer");
+		}
+		
+		if(!wakeLock.isHeld()){
+			wakeLock.acquire();
+		}
     }
     
     public void updateTapToRestText(){
@@ -193,7 +224,7 @@ public class RestTimer extends Activity {
 				if(vibrate) {
 					
 					if(settings.getBoolean("vibrate", true)){
-						long[] pattern = {0,100,300,100};
+						long[] pattern = {0,800,400,800};
 						vibrator.vibrate(pattern,-1);
 					}
 					
@@ -225,7 +256,7 @@ public class RestTimer extends Activity {
 			secondsLeft = Integer.parseInt(restLengthSecondsEditText.getText().toString());
 			
 			if(settings.getBoolean("vibrate", true)){
-				vibrator.vibrate(100);
+				vibrator.vibrate(200);
 			}
 			
 			updateText();

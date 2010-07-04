@@ -4,4 +4,5 @@
 <CheckBoxPreference android:title="@string/playSound" android:key="playSound" android:defaultValue="true"></CheckBoxPreference>
 <CheckBoxPreference android:key="vibrate" android:title="@string/vibrate" android:defaultValue="true"></CheckBoxPreference>
 <ListPreference android:title="@string/startTimerControl" android:entries="@array/startTimerControlArray" android:entryValues="@array/startTimerControlValueArray" android:defaultValue="both" android:key="startTimerControl"></ListPreference>
+<CheckBoxPreference android:key="preventSleep" android:defaultValue="false" android:title="@string/preventSleep"></CheckBoxPreference>
 </PreferenceScreen>
